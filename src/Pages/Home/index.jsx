@@ -15,7 +15,7 @@ export const Home = ()=>{
     const getPokemons = ()=>{
       let endPoints = []
       
-      for (var i = 1; i<50; i ++){
+      for (var i = 1; i<300; i ++){
         endPoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
       }
       axios.all(endPoints.map((endPoint) =>axios.get(endPoint))).then((res)=>setPokemons(res))
@@ -23,12 +23,13 @@ export const Home = ()=>{
     }
 
     const pokemonFilter = (name)=>{
+      let nome = name.toLowerCase()
       let filteredPokemons = []
-      if(name === ""){
+      if(nome === ""){
         getPokemons()
       }
       for (let i in pokemons){
-        if(pokemons[i].data.name.includes(name)){
+        if(pokemons[i].data.name.includes(nome)){
           filteredPokemons.push(pokemons[i])
         }
       }
