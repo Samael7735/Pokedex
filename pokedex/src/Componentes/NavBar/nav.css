@@ -1,0 +1,8 @@
+.caixaImg{
+  height: 100%;
+  background-image: url(https://www.freepnglogos.com/uploads/pokemon-logo-text-png-7.png);
+  background-size: contain;
+  width: 15%;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
